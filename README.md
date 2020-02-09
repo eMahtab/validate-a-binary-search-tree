@@ -31,7 +31,37 @@ Input: [5,1,4,null,null,3,6]
 Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 ```
-# Implementation :
+## Implementation 1 : Recursive
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        if(root == null)
+            return true;
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+    
+    private boolean isValidBST(TreeNode node, long min, long max){
+        if(node == null)
+            return true;
+        if(node.val <= min || node.val >= max)
+            return false;
+        return isValidBST(node.left, min, node.val) &&
+               isValidBST(node.right, node.val, max);
+    }
+}
+```
+
+## Implementation 2 : Iterative
 
 ```java
 /**
