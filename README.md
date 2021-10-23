@@ -31,6 +31,49 @@ Input: [5,1,4,null,null,3,6]
 Output: false
 Explanation: The root node's value is 5 but its right child's value is 4.
 ```
+
+## Incorrect Implementation :
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        if(root == null)
+            return true;
+        return checkBST(root);
+    }
+    
+    private boolean checkBST(TreeNode node) {
+        if(node == null)
+            return true;
+        if(node.left != null && node.left.val >= node.val)
+            return false;
+        if(node.right != null && node.right.val <= node.val)
+            return false;
+        return checkBST(node.left) && checkBST(node.right);    
+    }
+}
+```
+
+The above implementation is incorrect and will fail.
+
+!["Validate Binary Search Tree"](example.JPG?raw=true)
+
+
 ## Implementation 1 : Recursive
 
 ```java
