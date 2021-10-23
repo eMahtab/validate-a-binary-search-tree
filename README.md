@@ -105,6 +105,7 @@ class Solution {
 ```
 
 ## Implementation 2 : Iterative
+If given tree is a BST, then the Inorder traversal of the tree will be a strictly increasing sequence.
 
 ```java
 /**
