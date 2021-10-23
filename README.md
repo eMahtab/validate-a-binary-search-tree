@@ -141,4 +141,6 @@ class Solution {
 ```
 
 # References :
-https://www.youtube.com/watch?v=U9izQCtpVHc
+1. https://www.youtube.com/watch?v=yEwSGhSsT0U
+
+2. https://www.youtube.com/watch?v=U9izQCtpVHc
