@@ -76,6 +76,12 @@ The above implementation is incorrect and will fail.
 
 ## Implementation 1 : Recursive
 
+### Note : We have taken Long.MIN_VALUE and Long.MAX_VALUE, taking Integer.MIN_VALUE and Integer.MAX_VALUE will fail for 
+inputs having node with value  -2,147,483,648 (-2^31) Integer.MIN_VALUE or 2,147,483,647 (2^31-1) Integer.MAX_VALUE.
+
+Since we are given in the question that node values can range from Integer.MIN_VALUE (inclusive) to Integer.MAX_VALUE (inclusive).
+Thats the reason we took Long.MIN_VALUE and Long.MAX_VALUE rather than Integer.MIN_VALUE and Integer.MAX_VALUE.
+
 ```java
 /**
  * Definition for a binary tree node.
@@ -103,6 +109,8 @@ class Solution {
     }
 }
 ```
+
+
 
 ## Implementation 2 : Iterative
 If given tree is a BST, then the Inorder traversal of the tree will be a strictly increasing sequence.
